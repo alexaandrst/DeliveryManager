@@ -106,7 +106,7 @@ namespace DeliveryManager.Tests
         }
 
         [TestMethod]
-        public void Get_RegularWindow_AvailabilityTimeoutExpired()
+        public void Get_AvailabilityTimeoutExpired()
         {
             // Given
             var id = Guid.NewGuid();

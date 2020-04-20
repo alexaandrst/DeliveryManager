@@ -1,6 +1,7 @@
 ﻿using DeliveryManager.Models;
 using DeliveryManager.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +10,19 @@ namespace DeliveryManager.Repositories
 {
     public class DeliveryWindowRepo : DbContext, IDeliveryWindowRepo
     {
+        private readonly IConfiguration _configuration;
+
         public DbSet<DeliveryWindow> Windows { get; set; }
 
-        public DeliveryWindowRepo()
+        public DeliveryWindowRepo(IConfiguration configuration)
         {
-            //Database.EnsureDeleted();
+            _configuration = configuration;
             Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(Constants.DbConnection.ConnectionString);
+            optionsBuilder.UseSqlServer(_configuration.GetSection("ConnectionStrings:LocalDb").Value);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

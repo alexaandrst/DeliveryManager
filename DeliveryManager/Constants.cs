@@ -14,12 +14,6 @@ namespace DeliveryManager
             public const string V1 = "1.0";
         }
 
-        public class DbConnection
-        {
-            public const string ConnectionString =
-                "Server=(localdb)\\mssqllocaldb;Database=deliverynamager;Trusted_Connection=True;";
-        }
-
         public class UrgentDeliverySlot
         {
             public readonly static TimeSpan From = new TimeSpan(08, 00, 00);

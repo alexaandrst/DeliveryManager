@@ -7,7 +7,7 @@ namespace DeliveryManager.Models.Requests
     public class BaseWindowRequest : IDeliveryWindow
     {
         [Required]
-        [StringLength(5)]
+        [StringLength(50)]
         public string Name { get; set; }
 
         [Required]

@@ -1,0 +1,35 @@
+syntax: glob
+bin/Debug/*
+obj/Debug/*
+*.user
+*.orig
+*.nupkg
+**/**/[bB]in/*
+**/**/[oO]bj/*
+[bB]in/*
+[bB]in/[dD]ebug/*
+[oO]bj/[dD]ebug/*
+[oO]bj/[rR]elease/*
+[bB]in/[rR]elease/*
+packages/*
+bin/x86/*
+obj/x86/*
+obj/*
+Package/*
+Output/*
+*.suo
+app.log
+app.log*
+.idea/*
+paket-files/*
+
+*.rej
+.sonarqube
+.vs
+CodeCoverageReport
+TestsOpenCoverResults.xml
+TestsNUnitResults.xml
+syntax: regexp
+^.+\.min\.js$
+bin
+obj
